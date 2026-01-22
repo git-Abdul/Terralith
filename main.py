@@ -56,7 +56,8 @@ nature_img = ctk.CTkImage(
 )
 
 background_img = ctk.CTkImage(
-    Image.open(os.path.join(assets_path, "background.png")),
+    light_image=Image.open(os.path.join(assets_path, "background.png")),
+    dark_image=Image.open(os.path.join(assets_path, "background_dark.png")),
     size=(app.winfo_width()-100, app.winfo_height()-100)
 )
 
@@ -270,7 +271,7 @@ def createToplevel():
         corner_radius=200,
         border_width=3,
         width=50,
-        hover_color="#e0dbd0",
+        hover_color=("#e0dbd0","#181818"),
         command=root.destroy
     )
     btn1.grid(row=0, column=0, sticky="nw",
@@ -280,7 +281,6 @@ def createToplevel():
         rootF,
         text="TERRALITH",
         font=subheading_font,
-        text_color="#2b2622",
         fg_color="transparent",
         bg_color="transparent"
     )
@@ -308,7 +308,7 @@ def createToplevel():
     lbl.grid(row=1, column=0, ipady=10, ipadx=15, pady=30)
 
     lbl = ctk.CTkButton(a1, text="", font=text_font, image=backarrow_img, corner_radius=5,
-                        fg_color="transparent", border_width=2, border_color="#b96a4b", hover_color="#e0dbd0")
+                        fg_color="transparent", border_width=2, border_color="#b96a4b", hover_color=("#e0dbd0","#181818"))
     lbl.grid(row=2, column=0, ipady=10, ipadx=33)
 
     b = ctk.CTkFrame(rootF, fg_color="transparent", border_width=2,
@@ -321,7 +321,7 @@ def createToplevel():
     b.grid_columnconfigure(0, weight=1)
 
     l1 = ctk.CTkButton(b, text="Biome Characteristics", font=subsubheading_font, border_width=2,
-                       border_color="#b96a4b", state="disabled", fg_color="transparent", text_color_disabled="#000000", )
+                       border_color="#b96a4b", state="disabled", fg_color="transparent", text_color_disabled=("#000000", "#ffffff"), )
     l1.grid(row=0, column=0, padx=10, pady=(20, 10), ipadx=20, ipady=20)
 
     l2 = ctk.CTkLabel(b, text=biome_text, font=subtext_font, wraplength=800)
@@ -337,7 +337,7 @@ def createToplevel():
     c.grid_columnconfigure(0, weight=1)
 
     l3 = ctk.CTkButton(c, text="Sustainable Energy Resources", font=subsubheading_font, border_width=2,
-                       border_color="#b96a4b", state="disabled", fg_color="transparent", text_color_disabled="#000000", )
+                       border_color="#b96a4b", state="disabled", fg_color="transparent", text_color_disabled=("#000000", "#ffffff"), )
     l3.grid(row=0, column=0, padx=10, pady=(20, 10), ipadx=20, ipady=20)
 
     l4 = ctk.CTkLabel(c, text=energy_text, font=subtext_font, wraplength=800)
@@ -353,7 +353,7 @@ def createToplevel():
     d.grid_columnconfigure(0, weight=1)
 
     l5 = ctk.CTkButton(d, text="Commercial & Residential Opportunities", font=subsubheading_font, border_width=2,
-                       border_color="#b96a4b", state="disabled", fg_color="transparent", text_color_disabled="#000000", )
+                       border_color="#b96a4b", state="disabled", fg_color="transparent", text_color_disabled=("#000000", "#ffffff"), )
     l5.grid(row=0, column=0, padx=10, pady=(20, 10), ipadx=20, ipady=20)
 
     l6 = ctk.CTkLabel(d, text=infra_text, font=subtext_font, wraplength=800)
@@ -369,7 +369,7 @@ def createToplevel():
     e.grid_columnconfigure(0, weight=1)
 
     l7 = ctk.CTkButton(e, text="Cautions", font=subsubheading_font, border_width=2, border_color="#b96a4b",
-                       state="disabled", fg_color="transparent", text_color_disabled="#000000", )
+                       state="disabled", fg_color="transparent", text_color_disabled=("#000000", "#ffffff"), )
     l7.grid(row=0, column=0, padx=10, pady=(20, 10), ipadx=20, ipady=20)
 
     l8 = ctk.CTkLabel(e, text=caution_text, font=subtext_font, wraplength=800)
@@ -421,7 +421,6 @@ title = ctk.CTkLabel(
     main,
     text="TERRALITH",
     font=heading_font,
-    text_color="#2b2622",
     fg_color="transparent",
     bg_color="transparent"
 )
@@ -436,7 +435,7 @@ btn = ctk.CTkButton(
     fg_color="transparent",
     corner_radius=20,
     border_width=3,
-    hover_color="#e0dbd0",
+    hover_color=("#e0dbd0","#181818"),
     command=analytics_frame
 )
 btn.grid(row=2, column=0, sticky="n", ipady=10, ipadx=15)
@@ -462,7 +461,7 @@ btn = ctk.CTkButton(
     corner_radius=200,
     border_width=3,
     width=50,
-    hover_color="#e0dbd0",
+    hover_color=("#e0dbd0","#181818"),
     command=main_frame
 )
 btn.grid(row=0, column=0, sticky="nw", ipady=10, ipadx=15, padx=10, pady=15)
@@ -471,7 +470,6 @@ title = ctk.CTkLabel(
     analytics,
     text="TERRALITH",
     font=subheading_font,
-    text_color="#2b2622",
     fg_color="transparent",
     bg_color="transparent"
 )
@@ -571,7 +569,7 @@ btn = ctk.CTkButton(
     corner_radius=200,
     border_width=3,
     width=50,
-    hover_color="#e0dbd0",
+    hover_color=("#e0dbd0","#181818"),
     command=analytics_frame
 )
 btn.grid(row=0, column=0, sticky="nw", ipady=10, ipadx=15, padx=10, pady=15)
@@ -580,7 +578,6 @@ title = ctk.CTkLabel(
     parametrics,
     text="TERRALITH",
     font=subheading_font,
-    text_color="#2b2622",
     fg_color="transparent",
     bg_color="transparent"
 )
@@ -698,7 +695,7 @@ btn1 = ctk.CTkButton(
     corner_radius=200,
     border_width=3,
     width=50,
-    hover_color="#e0dbd0",
+    hover_color=("#e0dbd0","#181818"),
     command=analytics_frame
 )
 btn1.grid(row=0, column=0, sticky="nw",
@@ -708,7 +705,6 @@ title1 = ctk.CTkLabel(
     rootF,
     text="TERRALITH",
     font=subheading_font,
-    text_color="#2b2622",
     fg_color="transparent",
     bg_color="transparent"
 )
@@ -736,7 +732,7 @@ lbl = ctk.CTkLabel(a1, text=f"{file_name[0:len(file_name)-4].title()}".replace(
 lbl.grid(row=1, column=0, ipady=10, ipadx=15, pady=30)
 
 lb1 = ctk.CTkButton(a1, text="", font=text_font, image=backarrow_img, corner_radius=5,
-                    fg_color="transparent", border_width=2, border_color="#b96a4b", hover_color="#e0dbd0")
+                    fg_color="transparent", border_width=2, border_color="#b96a4b", hover_color=("#e0dbd0","#181818"))
 lb1.grid(row=2, column=0, ipady=10, ipadx=33)
 
 b = ctk.CTkFrame(rootF, fg_color="transparent", border_width=2,
@@ -749,7 +745,7 @@ b.grid_rowconfigure(2, weight=1)
 b.grid_columnconfigure(0, weight=1)
 
 l1 = ctk.CTkButton(b, text="Biome Characteristics", font=subsubheading_font, border_width=2,
-                    border_color="#b96a4b", state="disabled", fg_color="transparent", text_color_disabled="#000000", )
+                    border_color="#b96a4b", state="disabled", fg_color="transparent", text_color_disabled=("#000000", "#ffffff"), )
 l1.grid(row=0, column=0, padx=10, pady=(20, 10), ipadx=20, ipady=20)
 
 l2 = ctk.CTkLabel(b, text=biome_text, font=subtext_font, wraplength=800)
@@ -765,7 +761,7 @@ c.grid_rowconfigure(2, weight=1)
 c.grid_columnconfigure(0, weight=1)
 
 l3 = ctk.CTkButton(c, text="Sustainable Energy Resources", font=subsubheading_font, border_width=2,
-                    border_color="#b96a4b", state="disabled", fg_color="transparent", text_color_disabled="#000000", )
+                    border_color="#b96a4b", state="disabled", fg_color="transparent", text_color_disabled=("#000000", "#ffffff"), )
 l3.grid(row=0, column=0, padx=10, pady=(20, 10), ipadx=20, ipady=20)
 
 l4 = ctk.CTkLabel(c, text=energy_text, font=subtext_font, wraplength=800)
@@ -781,7 +777,7 @@ d.grid_rowconfigure(2, weight=1)
 d.grid_columnconfigure(0, weight=1)
 
 l5 = ctk.CTkButton(d, text="Commercial & Residential Opportunities", font=subsubheading_font, border_width=2,
-                    border_color="#b96a4b", state="disabled", fg_color="transparent", text_color_disabled="#000000", )
+                    border_color="#b96a4b", state="disabled", fg_color="transparent", text_color_disabled=("#000000", "#ffffff"), )
 l5.grid(row=0, column=0, padx=10, pady=(20, 10), ipadx=20, ipady=20)
 
 l6 = ctk.CTkLabel(d, text=infra_text, font=subtext_font, wraplength=800)
@@ -797,7 +793,7 @@ e.grid_rowconfigure(2, weight=1)
 e.grid_columnconfigure(0, weight=1)
 
 l7 = ctk.CTkButton(e, text="Cautions", font=subsubheading_font, border_width=2, border_color="#b96a4b",
-                    state="disabled", fg_color="transparent", text_color_disabled="#000000", )
+                    state="disabled", fg_color="transparent", text_color_disabled=("#000000", "#ffffff"), )
 l7.grid(row=0, column=0, padx=10, pady=(20, 10), ipadx=20, ipady=20)
 
 l8 = ctk.CTkLabel(e, text=caution_text, font=subtext_font, wraplength=800)
